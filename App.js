@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
-import { useEffect } from 'react';
+
 
 
 
 function App() {
 
-  const [todo, setTodo] = useState(null)
+  const [todo, setTodo] = useState('')
   
   useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -19,9 +19,9 @@ function App() {
 
 
   return (
-
     <div className="App">
-     
+     <h2>{`User ID: ${todo.id}`}</h2>
+     <p>{`Title Content: ${todo.title}`}</p>
     </div>
   );
 }
